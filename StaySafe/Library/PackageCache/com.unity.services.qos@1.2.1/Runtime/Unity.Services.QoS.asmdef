@@ -1,0 +1,39 @@
+{
+    "name": "Unity.Services.QoS",
+    "rootNamespace": "",
+    "references": [
+        "Unity.Services.Core",
+        "Unity.Services.Core.Internal",
+        "Unity.Collections"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "Unity",
+            "expression": "[2020.3.34f1,2021.0)",
+            "define": "UGS_QOS_SUPPORTED"
+        },
+        {
+            "name": "Unity",
+            "expression": "[2021.3.2f1,2022.0)",
+            "define": "UGS_QOS_SUPPORTED"
+        },
+        {
+            "name": "Unity",
+            "expression": "[2022.1.0f1,2022.2)",
+            "define": "UGS_QOS_SUPPORTED"
+        },
+        {
+            "name": "Unity",
+            "expression": "2022.2.0a10",
+            "define": "UGS_QOS_SUPPORTED"
+        }
+    ],
+    "noEngineReferences": false
+}

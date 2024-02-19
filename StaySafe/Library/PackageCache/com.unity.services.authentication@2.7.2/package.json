@@ -1,0 +1,51 @@
+{
+  "name": "com.unity.services.authentication",
+  "displayName": "Authentication",
+  "version": "2.7.2",
+  "unity": "2019.4",
+  "description": "Client SDK offering player identity management for Unity Gaming Services.\n\nIdentity providers can be configured from the editor or the Unity Dashboard.\n\nPlayer management is available in the Unity Dashboard.",
+  "dependencies": {
+    "com.unity.nuget.newtonsoft-json": "3.2.1",
+    "com.unity.services.core": "1.10.1",
+    "com.unity.modules.unitywebrequest": "1.0.0",
+    "com.unity.ugui": "1.0.0"
+  },
+  "type": "library",
+  "_upm": {
+    "gameService": {
+      "genericDashboardUrl": "https://dashboard.unity3d.com/player-authentication",
+      "projectDashboardUrl": "https://dashboard.unity3d.com/organizations/{0}/projects/{1}/player-authentication/about",
+      "projectDashboardUrlType": "OrganizationKeyAndProjectGuid",
+      "configurePath": "Project/Services/Authentication"
+    },
+    "supportedPlatforms": [
+      "Android",
+      "iOS",
+      "Linux",
+      "Mac",
+      "PC",
+      "WebGL",
+      "Windows 8 Universal",
+      "Windows 10 Universal"
+    ],
+    "changelog": "### Added\n- Added `SignInWithSteamAsync` and `LinkWithSteamAsync` methods with `identity` parameter for better security.\n- Added `SignInWithUsernamePasswordAsync`, `SignUpWithUsernamePasswordAsync`, `AddUsernamePasswordAsync`, `UpdatePasswordAsync`\n### Changed\n- Marked previous versions of `SignInWithSteamAsync` and `LinkWithSteamAsync` methods as obsolete."
+  },
+  "samples": [
+    {
+      "displayName": "UI Example",
+      "description": "Example scripts and UI elements demonstrating the Authentication package. This sample requires the com.unity.ugui package.",
+      "path": "Samples~"
+    }
+  ],
+  "relatedPackages": {
+    "com.unity.services.authentication.tests": "2.7.2"
+  },
+  "upmCi": {
+    "footprint": "daeafa8d10b235b265cfb61e651d758f33618434"
+  },
+  "repository": {
+    "url": "https://github.cds.internal.unity3d.com/unity/operate-services-sdk.git",
+    "type": "git",
+    "revision": "27cfcca47ddb40b3c45c37522a674c062ee4a43f"
+  }
+}

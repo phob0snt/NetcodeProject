@@ -1,0 +1,317 @@
+// This file is generated. Do not modify by hand.
+// XML documentation file not found. To check if public methods have XML comments,
+// make sure the XML doc file is present and located next to the scraped dll
+namespace Unity.Services.Relay
+{
+    public interface IRelayService
+    {
+        public System.Threading.Tasks.Task<Models.Allocation> CreateAllocationAsync(int maxConnections, string region = default(string));
+        public System.Threading.Tasks.Task<string> GetJoinCodeAsync(System.Guid allocationId);
+        public System.Threading.Tasks.Task<Models.JoinAllocation> JoinAllocationAsync(string joinCode);
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Models.Region>> ListRegionsAsync();
+    }
+
+    public interface IRelayServiceSDK : IRelayService
+    {
+    }
+
+    public interface IRelayServiceSDKConfiguration
+    {
+        public void SetAllocationsServiceBasePath(string basePath);
+    }
+
+    public static class Relay
+    {
+        public static IRelayServiceSDK Instance { get; }
+    }
+
+    public enum RelayExceptionReason
+    {
+        AllocationNotFound = 15008,
+        BadGateway = 15502,
+        Conflict = 15409,
+        EntityNotFound = 15404,
+        ExpectationFailed = 15417,
+        FailedDependency = 15424,
+        Forbidden = 15403,
+        GatewayTimeout = 15504,
+        Gone = 15410,
+        HttpVersionNotSupported = 15505,
+        InactiveProject = 15006,
+        InsufficientStorage = 15507,
+        InternalServerError = 15500,
+        InvalidArgument = 15400,
+        InvalidRequest = 15001,
+        JoinCodeNotFound = 15009,
+        LengthRequired = 15411,
+        Locked = 15423,
+        LoopDetected = 15508,
+        Max = 15999,
+        MethodNotAllowed = 15405,
+        Min = 15000,
+        Misdirected = 15421,
+        NetworkAuthenticationRequired = 15511,
+        NetworkError = 15998,
+        NoError = 15000,
+        NoSuitableRelay = 15010,
+        NotAcceptable = 15406,
+        NotExtended = 15510,
+        NotImplemented = 15501,
+        PaymentRequired = 15402,
+        PreconditionFailed = 15412,
+        PreconditionRequired = 15428,
+        ProxyAuthenticationRequired = 15407,
+        RangeNotSatisfiable = 15416,
+        RateLimited = 15429,
+        RegionNotFound = 15007,
+        RequestEntityTooLarge = 15413,
+        RequestHeaderFieldsTooLarge = 15431,
+        RequestTimeOut = 15408,
+        RequestUriTooLong = 15414,
+        ServiceUnavailable = 15503,
+        Teapot = 15418,
+        TooEarly = 15425,
+        Unauthorized = 15401,
+        UnavailableForLegalReasons = 15451,
+        Unknown = 15999,
+        UnprocessableTransaction = 15422,
+        UnsupportedMediaType = 15415,
+        UpgradeRequired = 15426,
+        VariantAlsoNegotiates = 15506,
+    }
+
+    public static class RelayService
+    {
+        public static IRelayService Instance { get; }
+    }
+
+    public class RelayServiceException : Unity.Services.Core.RequestFailedException
+    {
+        public RelayExceptionReason Reason { get; }
+        public RelayServiceException(System.Exception innerException) {}
+        public RelayServiceException(long errorCode, string message) {}
+        public RelayServiceException(RelayExceptionReason reason, string message) {}
+        public RelayServiceException(RelayExceptionReason reason, string message, System.Exception innerException) {}
+    }
+}
+
+namespace Unity.Services.Relay.Http
+{
+    public class DeserializationSettings
+    {
+        public MissingMemberHandling MissingMemberHandling;
+        public DeserializationSettings() {}
+    }
+
+    public enum MissingMemberHandling
+    {
+        Error = 0,
+        Ignore = 1,
+    }
+}
+
+namespace Unity.Services.Relay.Models
+{
+    [System.Runtime.Serialization.DataContract(Name = @"AllocateResponseBody")] [UnityEngine.Scripting.Preserve] public class AllocateResponseBody
+    {
+        [System.Runtime.Serialization.DataMember(EmitDefaultValue = true, IsRequired = true, Name = @"data")] [UnityEngine.Scripting.Preserve] public AllocationData Data { get; }
+        [System.Runtime.Serialization.DataMember(EmitDefaultValue = false, Name = @"links")] [UnityEngine.Scripting.Preserve] public ResponseLinks Links { get; }
+        [System.Runtime.Serialization.DataMember(EmitDefaultValue = true, IsRequired = true, Name = @"meta")] [UnityEngine.Scripting.Preserve] public ResponseMeta Meta { get; }
+        [UnityEngine.Scripting.Preserve] public AllocateResponseBody(ResponseMeta meta, AllocationData data, ResponseLinks links = default(ResponseLinks)) {}
+    }
+
+    [System.Runtime.Serialization.DataContract(Name = @"Allocation")] [UnityEngine.Scripting.Preserve] public class Allocation
+    {
+        [System.Runtime.Serialization.DataMember(EmitDefaultValue = true, IsRequired = true, Name = @"allocationId")] [UnityEngine.Scripting.Preserve] public System.Guid AllocationId { get; }
+        [System.Runtime.Serialization.DataMember(EmitDefaultValue = true, IsRequired = true, Name = @"allocationIdBytes")] [UnityEngine.Scripting.Preserve] public byte[] AllocationIdBytes { get; }
+        [System.Runtime.Serialization.DataMember(EmitDefaultValue = true, IsRequired = true, Name = @"connectionData")] [UnityEngine.Scripting.Preserve] public byte[] ConnectionData { get; }
+        [System.Runtime.Serialization.DataMember(EmitDefaultValue = true, IsRequired = true, Name = @"key")] [UnityEngine.Scripting.Preserve] public byte[] Key { get; }
+        [System.Runtime.Serialization.DataMember(EmitDefaultValue = true, IsRequired = true, Name = @"region")] [UnityEngine.Scripting.Preserve] public string Region { get; }
+        [System.Runtime.Serialization.DataMember(EmitDefaultValue = true, IsRequired = true, Name = @"relayServer")] [UnityEngine.Scripting.Preserve] public RelayServer RelayServer { get; }
+        [System.Runtime.Serialization.DataMember(EmitDefaultValue = true, IsRequired = true, Name = @"serverEndpoints")] [UnityEngine.Scripting.Preserve] public System.Collections.Generic.List<RelayServerEndpoint> ServerEndpoints { get; }
+        [UnityEngine.Scripting.Preserve] public Allocation(System.Guid allocationId, System.Collections.Generic.List<RelayServerEndpoint> serverEndpoints, RelayServer relayServer, byte[] key, byte[] connectionData, byte[] allocationIdBytes, string region) {}
+    }
+
+    [System.Runtime.Serialization.DataContract(Name = @"AllocationData")] [UnityEngine.Scripting.Preserve] public class AllocationData
+    {
+        [System.Runtime.Serialization.DataMember(EmitDefaultValue = true, IsRequired = true, Name = @"allocation")] [UnityEngine.Scripting.Preserve] public Allocation Allocation { get; }
+        [UnityEngine.Scripting.Preserve] public AllocationData(Allocation allocation) {}
+    }
+
+    [System.Runtime.Serialization.DataContract(Name = @"AllocationRequest")] [UnityEngine.Scripting.Preserve] public class AllocationRequest
+    {
+        [System.Runtime.Serialization.DataMember(EmitDefaultValue = true, IsRequired = true, Name = @"maxConnections")] [UnityEngine.Scripting.Preserve] public int MaxConnections { get; }
+        [System.Runtime.Serialization.DataMember(EmitDefaultValue = false, Name = @"region")] [UnityEngine.Scripting.Preserve] public string Region { get; }
+        [UnityEngine.Scripting.Preserve] public AllocationRequest(int maxConnections, string region = default(string)) {}
+    }
+
+    [System.Runtime.Serialization.DataContract(Name = @"ErrorResponseBody")] [UnityEngine.Scripting.Preserve] public class ErrorResponseBody
+    {
+        [System.Runtime.Serialization.DataMember(EmitDefaultValue = true, IsRequired = true, Name = @"code")] [UnityEngine.Scripting.Preserve] public int Code { get; }
+        [System.Runtime.Serialization.DataMember(EmitDefaultValue = true, IsRequired = true, Name = @"detail")] [UnityEngine.Scripting.Preserve] public string Detail { get; }
+        [System.Runtime.Serialization.DataMember(EmitDefaultValue = false, Name = @"details")] [UnityEngine.Scripting.Preserve] public System.Collections.Generic.List<KeyValuePair> Details { get; }
+        [System.Runtime.Serialization.DataMember(EmitDefaultValue = true, IsRequired = true, Name = @"status")] [UnityEngine.Scripting.Preserve] public int Status { get; }
+        [System.Runtime.Serialization.DataMember(EmitDefaultValue = true, IsRequired = true, Name = @"title")] [UnityEngine.Scripting.Preserve] public string Title { get; }
+        [System.Runtime.Serialization.DataMember(EmitDefaultValue = true, IsRequired = true, Name = @"type")] [UnityEngine.Scripting.Preserve] public string Type { get; }
+        [UnityEngine.Scripting.Preserve] public ErrorResponseBody(int status, string detail, string title, string type, int code, System.Collections.Generic.List<KeyValuePair> details = default(System.Collections.Generic.List<KeyValuePair>)) {}
+    }
+
+    public interface IOneOf
+    {
+        public System.Type Type { get; }
+        public object Value { get; }
+    }
+
+    [System.Runtime.Serialization.DataContract(Name = @"JoinAllocation")] [UnityEngine.Scripting.Preserve] public class JoinAllocation
+    {
+        [System.Runtime.Serialization.DataMember(EmitDefaultValue = true, IsRequired = true, Name = @"allocationId")] [UnityEngine.Scripting.Preserve] public System.Guid AllocationId { get; }
+        [System.Runtime.Serialization.DataMember(EmitDefaultValue = true, IsRequired = true, Name = @"allocationIdBytes")] [UnityEngine.Scripting.Preserve] public byte[] AllocationIdBytes { get; }
+        [System.Runtime.Serialization.DataMember(EmitDefaultValue = true, IsRequired = true, Name = @"connectionData")] [UnityEngine.Scripting.Preserve] public byte[] ConnectionData { get; }
+        [System.Runtime.Serialization.DataMember(EmitDefaultValue = true, IsRequired = true, Name = @"hostConnectionData")] [UnityEngine.Scripting.Preserve] public byte[] HostConnectionData { get; }
+        [System.Runtime.Serialization.DataMember(EmitDefaultValue = true, IsRequired = true, Name = @"key")] [UnityEngine.Scripting.Preserve] public byte[] Key { get; }
+        [System.Runtime.Serialization.DataMember(EmitDefaultValue = true, IsRequired = true, Name = @"region")] [UnityEngine.Scripting.Preserve] public string Region { get; }
+        [System.Runtime.Serialization.DataMember(EmitDefaultValue = true, IsRequired = true, Name = @"relayServer")] [UnityEngine.Scripting.Preserve] public RelayServer RelayServer { get; }
+        [System.Runtime.Serialization.DataMember(EmitDefaultValue = true, IsRequired = true, Name = @"serverEndpoints")] [UnityEngine.Scripting.Preserve] public System.Collections.Generic.List<RelayServerEndpoint> ServerEndpoints { get; }
+        [UnityEngine.Scripting.Preserve] public JoinAllocation(System.Guid allocationId, System.Collections.Generic.List<RelayServerEndpoint> serverEndpoints, RelayServer relayServer, byte[] key, byte[] connectionData, byte[] allocationIdBytes, string region, byte[] hostConnectionData) {}
+    }
+
+    [System.Runtime.Serialization.DataContract(Name = @"JoinAllocation_allOf")] [UnityEngine.Scripting.Preserve] public class JoinAllocationAllOf
+    {
+        [System.Runtime.Serialization.DataMember(EmitDefaultValue = true, IsRequired = true, Name = @"hostConnectionData")] [UnityEngine.Scripting.Preserve] public byte[] HostConnectionData { get; }
+        [UnityEngine.Scripting.Preserve] public JoinAllocationAllOf(byte[] hostConnectionData) {}
+    }
+
+    [System.Runtime.Serialization.DataContract(Name = @"JoinCodeData")] [UnityEngine.Scripting.Preserve] public class JoinCodeData
+    {
+        [System.Runtime.Serialization.DataMember(EmitDefaultValue = true, IsRequired = true, Name = @"joinCode")] [UnityEngine.Scripting.Preserve] public string JoinCode { get; }
+        [UnityEngine.Scripting.Preserve] public JoinCodeData(string joinCode) {}
+    }
+
+    [System.Runtime.Serialization.DataContract(Name = @"JoinCodeRequest")] [UnityEngine.Scripting.Preserve] public class JoinCodeRequest
+    {
+        [System.Runtime.Serialization.DataMember(EmitDefaultValue = true, IsRequired = true, Name = @"allocationId")] [UnityEngine.Scripting.Preserve] public System.Guid AllocationId { get; }
+        [UnityEngine.Scripting.Preserve] public JoinCodeRequest(System.Guid allocationId) {}
+    }
+
+    [System.Runtime.Serialization.DataContract(Name = @"JoinCodeResponseBody")] [UnityEngine.Scripting.Preserve] public class JoinCodeResponseBody
+    {
+        [System.Runtime.Serialization.DataMember(EmitDefaultValue = true, IsRequired = true, Name = @"data")] [UnityEngine.Scripting.Preserve] public JoinCodeData Data { get; }
+        [System.Runtime.Serialization.DataMember(EmitDefaultValue = true, IsRequired = true, Name = @"links")] [UnityEngine.Scripting.Preserve] public ResponseLinks Links { get; }
+        [System.Runtime.Serialization.DataMember(EmitDefaultValue = true, IsRequired = true, Name = @"meta")] [UnityEngine.Scripting.Preserve] public ResponseMeta Meta { get; }
+        [UnityEngine.Scripting.Preserve] public JoinCodeResponseBody(ResponseMeta meta, ResponseLinks links, JoinCodeData data) {}
+    }
+
+    [System.Runtime.Serialization.DataContract(Name = @"JoinData")] [UnityEngine.Scripting.Preserve] public class JoinData
+    {
+        [System.Runtime.Serialization.DataMember(EmitDefaultValue = true, IsRequired = true, Name = @"allocation")] [UnityEngine.Scripting.Preserve] public JoinAllocation Allocation { get; }
+        [UnityEngine.Scripting.Preserve] public JoinData(JoinAllocation allocation) {}
+    }
+
+    [System.Runtime.Serialization.DataContract(Name = @"JoinRequest")] [UnityEngine.Scripting.Preserve] public class JoinRequest
+    {
+        [System.Runtime.Serialization.DataMember(EmitDefaultValue = true, IsRequired = true, Name = @"joinCode")] [UnityEngine.Scripting.Preserve] public string JoinCode { get; }
+        [UnityEngine.Scripting.Preserve] public JoinRequest(string joinCode) {}
+    }
+
+    [System.Runtime.Serialization.DataContract(Name = @"JoinResponseBody")] [UnityEngine.Scripting.Preserve] public class JoinResponseBody
+    {
+        [System.Runtime.Serialization.DataMember(EmitDefaultValue = true, IsRequired = true, Name = @"data")] [UnityEngine.Scripting.Preserve] public JoinData Data { get; }
+        [System.Runtime.Serialization.DataMember(EmitDefaultValue = true, IsRequired = true, Name = @"meta")] [UnityEngine.Scripting.Preserve] public ResponseMeta Meta { get; }
+        [UnityEngine.Scripting.Preserve] public JoinResponseBody(ResponseMeta meta, JoinData data) {}
+    }
+
+    [System.Runtime.Serialization.DataContract(Name = @"KeyValuePair")] [UnityEngine.Scripting.Preserve] public class KeyValuePair
+    {
+        [System.Runtime.Serialization.DataMember(EmitDefaultValue = true, IsRequired = true, Name = @"key")] [UnityEngine.Scripting.Preserve] public string Key { get; }
+        [System.Runtime.Serialization.DataMember(EmitDefaultValue = true, IsRequired = true, Name = @"value")] [UnityEngine.Scripting.Preserve] public string Value { get; }
+        [UnityEngine.Scripting.Preserve] public KeyValuePair(string key, string value) {}
+    }
+
+    [System.Runtime.Serialization.DataContract(Name = @"Region")] [UnityEngine.Scripting.Preserve] public class Region
+    {
+        [System.Runtime.Serialization.DataMember(EmitDefaultValue = true, IsRequired = true, Name = @"description")] [UnityEngine.Scripting.Preserve] public string Description { get; }
+        [System.Runtime.Serialization.DataMember(EmitDefaultValue = true, IsRequired = true, Name = @"id")] [UnityEngine.Scripting.Preserve] public string Id { get; }
+        [UnityEngine.Scripting.Preserve] public Region(string id, string description) {}
+    }
+
+    [System.Runtime.Serialization.DataContract(Name = @"RegionsData")] [UnityEngine.Scripting.Preserve] public class RegionsData
+    {
+        [System.Runtime.Serialization.DataMember(EmitDefaultValue = true, IsRequired = true, Name = @"regions")] [UnityEngine.Scripting.Preserve] public System.Collections.Generic.List<Region> Regions { get; }
+        [UnityEngine.Scripting.Preserve] public RegionsData(System.Collections.Generic.List<Region> regions) {}
+    }
+
+    [System.Runtime.Serialization.DataContract(Name = @"RegionsResponseBody")] [UnityEngine.Scripting.Preserve] public class RegionsResponseBody
+    {
+        [System.Runtime.Serialization.DataMember(EmitDefaultValue = true, IsRequired = true, Name = @"data")] [UnityEngine.Scripting.Preserve] public RegionsData Data { get; }
+        [UnityEngine.Scripting.Preserve] public RegionsResponseBody(RegionsData data) {}
+    }
+
+    [System.Runtime.Serialization.DataContract(Name = @"RelayServer")] [UnityEngine.Scripting.Preserve] public class RelayServer
+    {
+        [System.Runtime.Serialization.DataMember(EmitDefaultValue = true, IsRequired = true, Name = @"ipV4")] [UnityEngine.Scripting.Preserve] public string IpV4 { get; }
+        [System.Runtime.Serialization.DataMember(EmitDefaultValue = true, IsRequired = true, Name = @"port")] [UnityEngine.Scripting.Preserve] public int Port { get; }
+        [UnityEngine.Scripting.Preserve] public RelayServer(string ipV4, int port) {}
+    }
+
+    [System.Runtime.Serialization.DataContract(Name = @"RelayServerEndpoint")] [UnityEngine.Scripting.Preserve] public class RelayServerEndpoint
+    {
+        [System.Runtime.Serialization.DataMember(EmitDefaultValue = true, IsRequired = true, Name = @"connectionType")] [UnityEngine.Scripting.Preserve] public string ConnectionType { get; }
+        [System.Runtime.Serialization.DataMember(EmitDefaultValue = true, IsRequired = true, Name = @"host")] [UnityEngine.Scripting.Preserve] public string Host { get; }
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] [System.Runtime.Serialization.DataMember(EmitDefaultValue = true, IsRequired = true, Name = @"network")] [UnityEngine.Scripting.Preserve] public RelayServerEndpoint.NetworkOptions Network { get; }
+        [System.Runtime.Serialization.DataMember(EmitDefaultValue = true, IsRequired = true, Name = @"port")] [UnityEngine.Scripting.Preserve] public int Port { get; }
+        [System.Runtime.Serialization.DataMember(EmitDefaultValue = true, IsRequired = true, Name = @"reliable")] [UnityEngine.Scripting.Preserve] public bool Reliable { get; }
+        [System.Runtime.Serialization.DataMember(EmitDefaultValue = true, IsRequired = true, Name = @"secure")] [UnityEngine.Scripting.Preserve] public bool Secure { get; }
+        [UnityEngine.Scripting.Preserve] public RelayServerEndpoint(string connectionType, RelayServerEndpoint.NetworkOptions network, bool reliable, bool secure, string host, int port) {}
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))] [UnityEngine.Scripting.Preserve] public enum NetworkOptions
+        {
+            [System.Runtime.Serialization.EnumMember(Value = @"tcp")] Tcp = 2,
+            [System.Runtime.Serialization.EnumMember(Value = @"udp")] Udp = 1,
+        }
+    }
+
+    [System.Runtime.Serialization.DataContract(Name = @"ResponseLinks")] [UnityEngine.Scripting.Preserve] public class ResponseLinks
+    {
+        [System.Runtime.Serialization.DataMember(EmitDefaultValue = false, Name = @"next")] [UnityEngine.Scripting.Preserve] public string Next { get; }
+        [UnityEngine.Scripting.Preserve] public ResponseLinks(string next = default(string)) {}
+    }
+
+    [System.Runtime.Serialization.DataContract(Name = @"ResponseMeta")] [UnityEngine.Scripting.Preserve] public class ResponseMeta
+    {
+        [System.Runtime.Serialization.DataMember(EmitDefaultValue = true, IsRequired = true, Name = @"requestId")] [UnityEngine.Scripting.Preserve] public string RequestId { get; }
+        [System.Runtime.Serialization.DataMember(EmitDefaultValue = true, IsRequired = true, Name = @"status")] [UnityEngine.Scripting.Preserve] public int Status { get; }
+        [UnityEngine.Scripting.Preserve] public ResponseMeta(string requestId, int status) {}
+    }
+}
+
+namespace Unity.Services.Relay.Scheduler
+{
+    public static class GameObjectFactory
+    {
+        public static UnityEngine.GameObject CreateCoreSdkGameObject();
+    }
+
+    public abstract class TaskScheduler : UnityEngine.MonoBehaviour
+    {
+        protected TaskScheduler() {}
+        public abstract bool IsMainThread();
+        public abstract void ScheduleBackgroundTask(System.Action task);
+        public abstract void ScheduleMainThreadTask(System.Action task);
+        public void ScheduleOrExecuteOnMain(System.Action action);
+    }
+
+    public sealed class TaskSchedulerThreaded : TaskScheduler
+    {
+        public TaskSchedulerThreaded() {}
+        public override bool IsMainThread();
+        public override void ScheduleBackgroundTask(System.Action task);
+        public override void ScheduleMainThreadTask(System.Action task);
+    }
+
+    public sealed class TaskSchedulerWebGL : TaskScheduler
+    {
+        public TaskSchedulerWebGL() {}
+        public override bool IsMainThread();
+        public override void ScheduleBackgroundTask(System.Action task);
+        public override void ScheduleMainThreadTask(System.Action task);
+    }
+}

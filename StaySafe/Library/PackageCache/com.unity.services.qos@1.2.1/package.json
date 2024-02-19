@@ -1,0 +1,29 @@
+{
+  "name": "com.unity.services.qos",
+  "displayName": "QoS",
+  "version": "1.2.1",
+  "unity": "2020.3",
+  "description": "Provides connectivity Quality of Service (QoS) measurements from Unity game clients to different Unity game services running in various geographic regions.",
+  "dependencies": {
+    "com.unity.services.core": "1.4.0",
+    "com.unity.modules.unitywebrequest": "1.0.0",
+    "com.unity.nuget.newtonsoft-json": "3.0.2",
+    "com.unity.services.authentication": "2.0.0",
+    "com.unity.collections": "1.2.4"
+  },
+  "relatedPackages": {
+    "com.unity.services.qos.tests": "1.2.1"
+  },
+  "_upm": {
+    "changelog": "### Changed\n- Fix a crash on Android when calling GetSortedMultiplayQosResultsAsync."
+  },
+  "upmCi": {
+    "footprint": "07ae54acaffaa595636f52896dabfb767afbf89a"
+  },
+  "documentationUrl": "https://docs.unity3d.com/Packages/com.unity.services.qos@1.2/manual/index.html",
+  "repository": {
+    "url": "https://github.cds.internal.unity3d.com/unity/operate-services-sdk.git",
+    "type": "git",
+    "revision": "03ad6f4152f0312b8c4cf090152fc0ad5e5891c4"
+  }
+}

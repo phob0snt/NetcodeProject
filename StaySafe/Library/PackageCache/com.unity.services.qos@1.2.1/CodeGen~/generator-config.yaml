@@ -1,0 +1,30 @@
+generatorName: csharp-unity
+outputDir: ./generated
+inputSpec: unity-services-api-docs/specs/v1/qos.yaml
+packageName: com.unity.services.qos
+additionalProperties:
+  unityVersion: "2020.3"
+  packageVersion: "1.1.0-pre.1"
+  unityPackageNamespace: "Unity.Services.Qos"
+  unityServiceName: "QosDiscovery"
+  generateMarkdownDocumentation: false
+  usePhpStyleQueryParams: false
+  unityPackageDescription: "Provides connectivity Quality of Service (QoS) measurements from Unity game clients to different Unity game services running in various geographic regions."
+  useUnityAuthentication: true
+  publicAccess: []
+x-recipeEngine:
+    externalSpecSource:
+        repository: "https://github.com/Unity-Technologies/unity-services-api-docs"
+        branch: main
+        sourcePath: "specs/v1/"
+        outputPath: "unity-services-api-docs/specs/v1/"
+    moveGeneratorFiles: true
+    trackedDir: ./Packages/Public/com.unity.services.qos
+    preProcessCommands:
+        - echo "Done executing pre process commands."
+    postProcessCommands:
+        - rm -r unity-services-api-docs
+        - rm openapi-generator.log
+        - cp -r ./generated/com.unity.services.qos/* ../
+        - rm -r ./generated
+        - echo "Done executing post process commands."
