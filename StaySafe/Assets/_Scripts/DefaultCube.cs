@@ -1,10 +1,8 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class DefaultCube : ProtectionCube
 {
-    public override GameObject TransparentObj { get { return _transparentObj; } }
-    [SerializeField] private GameObject _transparentObj;
+    public override int Durability { get; protected set; } = 100;
 
-    protected override int _Durability { get; set; } = 100;
+    public override int AgrePriority => 1;
 }

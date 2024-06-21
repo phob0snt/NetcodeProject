@@ -2,7 +2,7 @@ using Unity.Netcode;
 using UnityEngine;
 using Zenject;
 
-[RequireComponent(typeof(CharacterController))]
+[RequireComponent(typeof(CharacterController), typeof(Player))]
 public class PlayerNetworkController : NetworkBehaviour
 {
     [SerializeField] private float moveSpeed = 2f;
@@ -47,6 +47,7 @@ public class PlayerNetworkController : NetworkBehaviour
         }
         transform.rotation = Quaternion.Euler(0, rotationAngle, 0);
         controller.Move(velocity);
+        transform.position = new Vector3(transform.position.x, 1.05f, transform.position.z);
     }
 
     private void ChangeAnimState(string state)

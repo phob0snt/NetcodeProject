@@ -341,8 +341,8 @@
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.Netcode.Runtime.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/UnityEngine.UI.ref.dll"
-"Library/PackageCache/com.unity.multiplayer.samples.coop@e48babbbf2/Utilities/Net/ClientAuthority/ClientNetworkAnimator.cs"
-"Library/PackageCache/com.unity.multiplayer.samples.coop@e48babbbf2/Utilities/Net/ClientAuthority/ClientNetworkTransform.cs"
+"Library/PackageCache/com.unity.multiplayer.samples.coop@74afaebf85/Utilities/Net/ClientAuthority/ClientNetworkAnimator.cs"
+"Library/PackageCache/com.unity.multiplayer.samples.coop@74afaebf85/Utilities/Net/ClientAuthority/ClientNetworkTransform.cs"
 -langversion:9.0
 
 /deterministic

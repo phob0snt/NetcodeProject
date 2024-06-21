@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: BlocksStorage
   m_EditorClassIdentifier: 
   cubes:
-  - {fileID: 1333080291720716910, guid: 10065303f815c504a889cc9c6eb25f74, type: 3}
+  - {fileID: 4963595475851350926, guid: 110cc721c01a79e4d8c55fe257a9ee9b, type: 3}

@@ -1,24 +1,23 @@
 using System.Collections.Generic;
 using System.Linq;
 using Unity.Netcode;
-using Unity.VisualScripting;
-using UnityEditor.Rendering;
 using UnityEngine;
 using Zenject;
 
+[RequireComponent(typeof(Player))]
 public class Builder : NetworkBehaviour
 {
     enum RotationDirection { Null, Forward, Left, Right, Backward }
-    private RotationDirection _Rotation;
-    private List<ProtectionCube> blocksRef;
-    [SerializeField] private Dictionary<ProtectionCube, int> _Inventory = new(8);
-    [SerializeField] private Transform buildingRay;
-    private Transform displayedBlock;
-    private Vector3 buildingVector = Vector3.zero;
-    [Inject] private BuilderView builderView;
-    [SerializeField] NetworkSpawnManager spawnManager;
+    private RotationDirection _rotation;
+    private List<ProtectionCube> _blocksRef;
+    [SerializeField] private Dictionary<ProtectionCube, int> _inventory = new(8);
+    [SerializeField] private Transform _buildingRay;
+    private Transform _displayedBlock;
+    private Vector3 _buildingVector = Vector3.zero;
+    [Inject] private BuilderView _builderView;
+    [SerializeField] private NetworkSpawnManager _spawnManager;
 
-    private NetworkVariable<BlockParams> displayedBlockParams = new NetworkVariable<BlockParams>(new BlockParams(new Color(1, 1, 1, 0.3f), false, false), NetworkVariableReadPermission.Everyone);
+    private NetworkVariable<BlockParams> _displayedBlockParams = new NetworkVariable<BlockParams>(new BlockParams(new Color(1, 1, 1, 0.3f), false, false), NetworkVariableReadPermission.Everyone);
 
     struct BlockParams : INetworkSerializable
     {
@@ -40,29 +39,24 @@ public class Builder : NetworkBehaviour
         }
     }
 
-    struct NetworkVector3
-    {
-
-    }
-
     private bool isBuilding;
     public override void OnNetworkSpawn()
     {
         if (!IsOwner) return;
-        blocksRef ??= Resources.Load<BlocksSO>("BlocksStorage").cubes;
-        _Inventory.Add(blocksRef[0], 1);
-        Debug.Log(_Inventory.ElementAt(0).Key.transform);
+        _blocksRef ??= Resources.Load<BlocksSO>("BlocksStorage").cubes;
+        _inventory.Add(_blocksRef[0], 1);
+        Debug.Log(_inventory.ElementAt(0).Key.transform);
         EnableBuilderMode();
-        builderView.Connect(this);
+        _builderView.Connect(this);
     }
 
     private void GetNewDisplayedBlock()
     {
         if (!IsOwner) return;
-        displayedBlock = Instantiate(_Inventory.ElementAt(0).Key.transform, new Vector3(transform.position.x, transform.position.y - 1, transform.position.z), Quaternion.identity);
-        displayedBlock.GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1, 0.3f);
-        displayedBlock.GetComponent<Collider>().enabled = false;
-        Debug.Log(displayedBlock.GetComponent<NetworkObject>().IsSpawned);
+        _displayedBlock = Instantiate(_inventory.ElementAt(0).Key.transform, new Vector3(transform.position.x, transform.position.y - 1, transform.position.z), Quaternion.identity);
+        Debug.Log(_displayedBlock);
+        _displayedBlock.GetComponent<ProtectionCube>().ShowTransparent();
+        Debug.Log(_displayedBlock.GetComponent<NetworkObject>().IsSpawned);
         
     }
 
@@ -72,48 +66,53 @@ public class Builder : NetworkBehaviour
         isBuilding = true;
     }
 
-    void Update()
+    private void Update()
     {
         if (!IsOwner) return;
         if (transform.eulerAngles.y > 50 && transform.eulerAngles.y <= 130)
-            _Rotation = RotationDirection.Right;
+            _rotation = RotationDirection.Right;
         else if (transform.eulerAngles.y > 130 && transform.eulerAngles.y <= 230)
-            _Rotation = RotationDirection.Backward;
+            _rotation = RotationDirection.Backward;
         else if (transform.eulerAngles.y > 230 && transform.eulerAngles.y <= 310)
-            _Rotation = RotationDirection.Left;
+            _rotation = RotationDirection.Left;
         else
         {
             float rotationAngle = transform.eulerAngles.y < 180 ? transform.eulerAngles.y : -(180 - (transform.eulerAngles.y - 180));
             if (rotationAngle > -50 && rotationAngle <= 50)
-                _Rotation = RotationDirection.Forward;
+                _rotation = RotationDirection.Forward;
         }
 
-        RaycastHit forwardHit;
-        RaycastHit underHit;
-        switch (_Rotation)
+        switch (_rotation)
         {
-            case RotationDirection.Forward: buildingVector = Vector3.forward; break;
-            case RotationDirection.Right: buildingVector = Vector3.right; break;
-            case RotationDirection.Backward: buildingVector = -Vector3.forward; break;
-            case RotationDirection.Left: buildingVector = -Vector3.right; break;
+            case RotationDirection.Forward: _buildingVector = Vector3.forward; break;
+            case RotationDirection.Right: _buildingVector = Vector3.right; break;
+            case RotationDirection.Backward: _buildingVector = -Vector3.forward; break;
+            case RotationDirection.Left: _buildingVector = -Vector3.right; break;
         }
-        Physics.Raycast(buildingRay.position, buildingVector, out forwardHit, 1f);
-        Physics.Raycast(transform.position, -transform.up, out underHit, 0.5f);
-        Debug.DrawRay(buildingRay.position, buildingVector * 1f);
+        Physics.Raycast(_buildingRay.position, _buildingVector, out RaycastHit forwardHit, 1f);
+        Physics.Raycast(transform.position, -transform.up, out RaycastHit underHit, 0.5f);
+        Debug.DrawRay(_buildingRay.position, _buildingVector * 1f);
+        Debug.DrawRay(transform.position, -transform.up * 0.5f);
         if (underHit.collider != null && underHit.collider.gameObject.GetComponent<ProtectionCube>() != null && isBuilding)
         {
+            Debug.Log("FIRST");
             if (forwardHit.collider == null)
             {
-                if (displayedBlock == null)
+                Debug.Log("SECOND");
+                if (_displayedBlock == null)
                     GetNewDisplayedBlock();
-                displayedBlock.GetComponent<MeshRenderer>().enabled = true;
-                displayedBlock.transform.position = underHit.collider.transform.position + buildingVector;
-                //displayedBlock.transform.position = new Vector3(100, 0, 0);
+                _displayedBlock.GetComponent<MeshRenderer>().enabled = true;
+                Debug.Log(underHit.collider.transform.position);
+                if (underHit.collider.transform.position.x % 1 == 0 && underHit.collider.transform.position.y % 1 == 0 && underHit.collider.transform.position.z % 1 == 0)
+                    _displayedBlock.transform.position = underHit.collider.transform.position + _buildingVector;
+                else
+                    _displayedBlock.transform.position = new Vector3(Mathf.Round(underHit.collider.transform.position.x), underHit.collider.transform.position.y, Mathf.Round(underHit.collider.transform.position.z)) + _buildingVector;
+                //_displayedBlock.transform.position = new Vector3(100, 0, 0);
             }
             else
             {
-                if (displayedBlock != null)
-                    displayedBlock.GetComponent<MeshRenderer>().enabled = false;   
+                if (_displayedBlock != null)
+                    _displayedBlock.GetComponent<MeshRenderer>().enabled = false;   
             }
         }
     }
@@ -124,23 +123,22 @@ public class Builder : NetworkBehaviour
         if (!IsOwner) return;
         if (IsHost)
         {
-            if (!displayedBlock.GetComponent<MeshRenderer>().enabled) return;
+            if (!_displayedBlock.GetComponent<MeshRenderer>().enabled) return;
             //obj.Build();
-            displayedBlock.GetComponent<Collider>().enabled = true;
-            displayedBlock.GetComponent<MeshRenderer>().material.color = Color.white;
-            Debug.Log("isspawned" + displayedBlock.GetComponent<NetworkObject>().IsSpawned);
-            Debug.Log("isvisible" + displayedBlock.GetComponent<NetworkObject>().IsNetworkVisibleTo(1));
-            if (displayedBlock.GetComponent<NetworkObject>().IsSpawned)
-                displayedBlock.GetComponent<NetworkObject>().Despawn(false);
-            if (!displayedBlock.GetComponent<NetworkObject>().IsSpawned)
-                displayedBlock.GetComponent<NetworkObject>().Spawn();
-            if (!displayedBlock.GetComponent<NetworkObject>().IsNetworkVisibleTo(1))
-                displayedBlock.GetComponent<NetworkObject>().NetworkShow(1);
+            _displayedBlock.GetComponent<ProtectionCube>().Build();
+            Debug.Log("isspawned" + _displayedBlock.GetComponent<NetworkObject>().IsSpawned);
+            Debug.Log("isvisible" + _displayedBlock.GetComponent<NetworkObject>().IsNetworkVisibleTo(1));
+            if (_displayedBlock.GetComponent<NetworkObject>().IsSpawned)
+                _displayedBlock.GetComponent<NetworkObject>().Despawn(false);
+            if (!_displayedBlock.GetComponent<NetworkObject>().IsSpawned)
+                _displayedBlock.GetComponent<NetworkObject>().Spawn();
+            if (!_displayedBlock.GetComponent<NetworkObject>().IsNetworkVisibleTo(1))
+                _displayedBlock.GetComponent<NetworkObject>().NetworkShow(1);
         }
         else
         {
-            ObjectSpawnServerRpc(displayedBlock.position);
-            Destroy(displayedBlock.gameObject);
+            ObjectSpawnServerRpc(_displayedBlock.position);
+            Destroy(_displayedBlock.gameObject);
         }
         GetNewDisplayedBlock();
     }
@@ -148,7 +146,7 @@ public class Builder : NetworkBehaviour
     //[ServerRpc]
     //private void SpawnObjServerRpc()
     //{
-    //    Transform temp = Instantiate(_Inventory.ElementAt(0).Key.transform, new Vector3(transform.position.x, transform.position.y - 1, transform.position.z), Quaternion.identity);
+    //    Transform temp = Instantiate(_inventory.ElementAt(0).Key.transform, new Vector3(transform.position.x, transform.position.y - 1, transform.position.z), Quaternion.identity);
     //    temp.GetComponent<NetworkObject>().SpawnWithOwnership(1);
     //    GetObjIDClientRpc(new NetworkObjectReference(temp.GetComponent<NetworkObject>()));
     //    temp.GetComponent<NetworkObject>().NetworkHide(0);
@@ -158,8 +156,8 @@ public class Builder : NetworkBehaviour
     private void ObjectSpawnServerRpc(Vector3 position)
     {
         Transform temp = Instantiate(Resources.Load<BlocksSO>("BlocksStorage").cubes[0].transform, new Vector3(transform.position.x, transform.position.y - 1, transform.position.z), Quaternion.identity);
-        temp.GetComponent<NetworkObject>().Spawn();
         temp.position = position;
+        temp.GetComponent<NetworkObject>().Spawn();
     }
 
 
@@ -170,18 +168,18 @@ public class Builder : NetworkBehaviour
     //    if (IsHost) return;
     //    if (reference.TryGet(out NetworkObject networkObj))
     //    {
-    //        displayedBlock = networkObj.GetComponent<Transform>();
-    //        displayedBlock.GetComponent<Collider>().enabled = displayedBlockParams.Value._isCollider;
-    //        displayedBlock.GetComponent<MeshRenderer>().enabled = displayedBlockParams.Value._isMeshRenderer;
-    //        displayedBlock.GetComponent<MeshRenderer>().material.color = displayedBlockParams.Value._color;
-    //        Debug.Log(displayedBlock.GetComponent<MeshRenderer>());
+    //        _displayedBlock = networkObj.GetComponent<Transform>();
+    //        _displayedBlock.GetComponent<Collider>().enabled = _displayedBlockParams.Value._isCollider;
+    //        _displayedBlock.GetComponent<MeshRenderer>().enabled = _displayedBlockParams.Value._isMeshRenderer;
+    //        _displayedBlock.GetComponent<MeshRenderer>().material.color = _displayedBlockParams.Value._color;
+    //        Debug.Log(_displayedBlock.GetComponent<MeshRenderer>());
     //    }
-    //    Debug.Log(displayedBlock.GetComponent<NetworkObject>());
-    //    if (!displayedBlock.GetComponent<MeshRenderer>().enabled) return;
-    //    displayedBlock.GetComponent<Collider>().enabled = true;
-    //    displayedBlock.GetComponent<MeshRenderer>().material.color = Color.white;
-    //    displayedBlock.GetComponent<NetworkObject>().NetworkShow(1);
-    //    GetNewDisplayedBlock();
+    //    Debug.Log(_displayedBlock.GetComponent<NetworkObject>());
+    //    if (!_displayedBlock.GetComponent<MeshRenderer>().enabled) return;
+    //    _displayedBlock.GetComponent<Collider>().enabled = true;
+    //    _displayedBlock.GetComponent<MeshRenderer>().material.color = Color.white;
+    //    _displayedBlock.GetComponent<NetworkObject>().NetworkShow(1);
+    //    GetNew_displayedBlock();
     //}
 
 }

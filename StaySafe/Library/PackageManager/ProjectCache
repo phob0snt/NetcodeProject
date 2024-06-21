@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638424685712980244
-    m_Hash: 3524066048
+      ticks: 638540587439753878
+    m_Hash: 4042891292
   m_LockFileStatus:
     m_FilePath: D:/github/NetcodeProject/StaySafe/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638424685714170500
-    m_Hash: 1616465185
+      ticks: 638540587440294244
+    m_Hash: 1938180339
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -22,6 +22,147 @@ m_LocalPackages:
 m_ProjectPath: D:/github/NetcodeProject/StaySafe/Packages
 m_EditorVersion: 2021.3.34f1 (25266724e7bd)
 m_ResolvedPackages:
+- packageId: com.unity.adaptiveperformance@4.0.1
+  testable: 0
+  isDirectDependency: 1
+  version: 4.0.1
+  source: 1
+  resolvedPath: D:\github\NetcodeProject\StaySafe\Library\PackageCache\com.unity.adaptiveperformance@4.0.1
+  assetPath: Packages/com.unity.adaptiveperformance
+  name: com.unity.adaptiveperformance
+  displayName: Adaptive Performance
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: asset
+  description: 'The Adaptive Performance package provides an API to get feedback
+    about the thermal and power state of mobile devices, enabling applications to
+    make performance-relevant adaptions at runtime.
+
+
+    For instruction on how
+    to use samples, please read the documentation.
+
+
+    By installing this package,
+    you agree to the terms and conditions of the Unity End User License Agreement
+    found under "View licenses" above.'
+  status: 0
+  errors: []
+  versions:
+    all:
+    - 0.2.0-preview.1
+    - 1.0.0
+    - 1.0.1
+    - 1.1.0-preview.2
+    - 1.1.0-preview.3
+    - 1.1.0-preview.4
+    - 1.1.0-preview.5
+    - 1.1.0-preview.7
+    - 1.1.0
+    - 1.1.6
+    - 1.1.9
+    - 1.1.10
+    - 1.2.0
+    - 1.2.2
+    - 1.2.3
+    - 2.0.0-preview.1
+    - 2.0.0-preview.2
+    - 2.0.0-preview.4
+    - 2.0.0-preview.7
+    - 2.0.0-preview.8
+    - 2.0.0-preview.9
+    - 2.0.0-preview.10
+    - 2.0.0-preview.11
+    - 2.0.0
+    - 2.0.1
+    - 2.0.2
+    - 2.1.0
+    - 2.1.1
+    - 2.2.1
+    - 2.2.3
+    - 2.2.4
+    - 3.0.0-pre.2
+    - 3.0.0
+    - 3.0.2
+    - 3.0.3
+    - 4.0.0-pre.1
+    - 4.0.0
+    - 4.0.1
+    - 5.0.0-pre.1
+    - 5.0.0-pre.2
+    - 5.0.0-pre.3
+    - 5.0.0-pre.4
+    - 5.0.0
+    - 5.0.1
+    - 5.0.2
+    - 5.1.0
+    compatible:
+    - 4.0.1
+    - 5.0.0-pre.1
+    - 5.0.0-pre.2
+    - 5.0.0-pre.3
+    - 5.0.0-pre.4
+    - 5.0.0
+    - 5.0.1
+    - 5.0.2
+    - 5.1.0
+    verified: 4.0.1
+  dependencies:
+  - name: com.unity.subsystemregistration
+    version: 1.1.0
+  - name: com.unity.profiling.core
+    version: 1.0.2
+  resolvedDependencies:
+  - name: com.unity.subsystemregistration
+    version: 1.1.0
+  - name: com.unity.modules.subsystems
+    version: 1.0.0
+  - name: com.unity.modules.jsonserialize
+    version: 1.0.0
+  - name: com.unity.profiling.core
+    version: 1.0.2
+  keywords:
+  - mobile
+  - adaptive
+  - performance
+  - utility
+  - utilities
+  - core
+  - samsung
+  - ap
+  - provider
+  - subsystem
+  - indexer
+  - scaler
+  - vrr
+  - boost
+  - profiles
+  - cluster
+  - clusterinfo
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+  hideInEditor: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 637940147290000000
+  documentationUrl: 
+  hasRepository: 1
+  repository:
+    type: git
+    url: https://github.cds.internal.unity3d.com/unity/com.unity.adaptiveperformance.git
+    revision: 08f36a7c7e7e80b8ec602e108f0e40d1661540b5
+    path: 
+  unityLifecycle:
+    version: 4.0.1
+    nextVersion: 
 - packageId: com.unity.addressables@1.19.19
   testable: 0
   isDirectDependency: 1
@@ -163,10 +304,12 @@ m_ResolvedPackages:
     - 1.21.18
     - 1.21.19
     - 1.21.20
+    - 1.21.21
     - 2.0.3
     - 2.0.4
     - 2.0.6
     - 2.0.8
+    - 2.1.0
     compatible:
     - 1.19.19
     - 1.20.0
@@ -185,6 +328,7 @@ m_ResolvedPackages:
     - 1.21.18
     - 1.21.19
     - 1.21.20
+    - 1.21.21
     verified: 1.19.19
   dependencies:
   - name: com.unity.scriptablebuildpipeline
@@ -238,6 +382,74 @@ m_ResolvedPackages:
     path: 
   unityLifecycle:
     version: 1.19.19
+    nextVersion: 
+- packageId: com.unity.ai.navigation@1.0.0-exp.4
+  testable: 0
+  isDirectDependency: 1
+  version: 1.0.0-exp.4
+  source: 1
+  resolvedPath: D:\github\NetcodeProject\StaySafe\Library\PackageCache\com.unity.ai.navigation@1.0.0-exp.4
+  assetPath: Packages/com.unity.ai.navigation
+  name: com.unity.ai.navigation
+  displayName: AI Navigation
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: asset
+  description: High-level NavMesh components for building and using NavMeshes at
+    runtime and at edit time.
+  status: 0
+  errors: []
+  versions:
+    all:
+    - 1.0.0-exp.1
+    - 1.0.0-exp.2
+    - 1.0.0-exp.3
+    - 1.0.0-exp.4
+    - 1.1.0-pre.1
+    - 1.1.0-pre.2
+    - 1.1.1
+    - 1.1.3
+    - 1.1.4
+    - 1.1.5
+    - 2.0.0-pre.3
+    - 2.0.0-pre.4
+    - 2.0.0
+    compatible:
+    - 1.0.0-exp.1
+    - 1.0.0-exp.2
+    - 1.0.0-exp.3
+    - 1.0.0-exp.4
+    verified: 
+  dependencies:
+  - name: com.unity.modules.ai
+    version: 1.0.0
+  resolvedDependencies:
+  - name: com.unity.modules.ai
+    version: 1.0.0
+  keywords: []
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+  hideInEditor: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 637631812400000000
+  documentationUrl: 
+  hasRepository: 1
+  repository:
+    type: git
+    url: https://github.cds.internal.unity3d.com/unity/com.unity.ai.navigation.git
+    revision: e38a28933e4513afa2b6084c2948852bd9daad56
+    path: 
+  unityLifecycle:
+    version: 
     nextVersion: 
 - packageId: com.unity.cinemachine@2.8.9
   testable: 0
@@ -328,6 +540,7 @@ m_ResolvedPackages:
     - 2.9.4
     - 2.9.5
     - 2.9.7
+    - 2.10.0
     - 3.0.0-pre.3
     - 3.0.0-pre.4
     - 3.0.0-pre.5
@@ -336,6 +549,7 @@ m_ResolvedPackages:
     - 3.0.0-pre.8
     - 3.0.0-pre.9
     - 3.0.1
+    - 3.1.0
     compatible:
     - 2.8.9
     - 2.9.0-pre.1
@@ -345,6 +559,7 @@ m_ResolvedPackages:
     - 2.9.4
     - 2.9.5
     - 2.9.7
+    - 2.10.0
     verified: 2.8.9
   dependencies:
   - name: com.unity.test-framework
@@ -536,9 +751,11 @@ m_ResolvedPackages:
     - 3.0.25
     - 3.0.26
     - 3.0.27
+    - 3.0.28
     compatible:
     - 3.0.27
-    verified: 3.0.27
+    - 3.0.28
+    verified: 3.0.28
   dependencies:
   - name: com.unity.ext.nunit
     version: 1.0.6
@@ -715,9 +932,9 @@ m_ResolvedPackages:
 - packageId: com.unity.multiplayer.samples.coop@https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop.git?path=/Packages/com.unity.multiplayer.samples.coop#main
   testable: 0
   isDirectDependency: 1
-  version: 1.8.0
+  version: 1.9.0
   source: 5
-  resolvedPath: D:\github\NetcodeProject\StaySafe\Library\PackageCache\com.unity.multiplayer.samples.coop@e48babbbf2
+  resolvedPath: D:\github\NetcodeProject\StaySafe\Library\PackageCache\com.unity.multiplayer.samples.coop@74afaebf85
   assetPath: Packages/com.unity.multiplayer.samples.coop
   name: com.unity.multiplayer.samples.coop
   displayName: Multiplayer Samples Utilities
@@ -741,7 +958,7 @@ m_ResolvedPackages:
   - name: com.unity.multiplayer.tools
     version: 1.1.0
   - name: com.unity.netcode.gameobjects
-    version: 1.7.1
+    version: 1.8.1
   - name: com.unity.services.relay
     version: 1.0.5
   resolvedDependencies:
@@ -780,7 +997,7 @@ m_ResolvedPackages:
   - name: com.unity.modules.uielementsnative
     version: 1.0.0
   - name: com.unity.netcode.gameobjects
-    version: 1.7.1
+    version: 1.8.1
   - name: com.unity.transport
     version: 1.4.1
   - name: com.unity.services.relay
@@ -936,102 +1153,6 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 1.0.0
     nextVersion: 
-- packageId: com.unity.netcode.gameobjects@1.7.1
-  testable: 0
-  isDirectDependency: 1
-  version: 1.7.1
-  source: 1
-  resolvedPath: D:\github\NetcodeProject\StaySafe\Library\PackageCache\com.unity.netcode.gameobjects@1.7.1
-  assetPath: Packages/com.unity.netcode.gameobjects
-  name: com.unity.netcode.gameobjects
-  displayName: Netcode for GameObjects
-  author:
-    name: 
-    email: 
-    url: 
-  category: 
-  type: assets
-  description: Netcode for GameObjects is a high-level netcode SDK that provides
-    networking capabilities to GameObject/MonoBehaviour workflows within Unity and
-    sits on top of underlying transport layer.
-  status: 0
-  errors: []
-  versions:
-    all:
-    - 1.0.0-pre.2
-    - 1.0.0-pre.3
-    - 1.0.0-pre.4
-    - 1.0.0-pre.5
-    - 1.0.0-pre.6
-    - 1.0.0-pre.7
-    - 1.0.0-pre.8
-    - 1.0.0-pre.9
-    - 1.0.0-pre.10
-    - 1.0.0
-    - 1.0.1
-    - 1.0.2
-    - 1.1.0
-    - 1.2.0
-    - 1.3.1
-    - 1.4.0
-    - 1.5.1
-    - 1.5.2
-    - 1.6.0
-    - 1.7.0
-    - 1.7.1
-    - 1.8.0
-    - 1.8.1
-    compatible:
-    - 1.7.1
-    - 1.8.0
-    - 1.8.1
-    verified: 1.7.1
-  dependencies:
-  - name: com.unity.nuget.mono-cecil
-    version: 1.10.1
-  - name: com.unity.transport
-    version: 1.4.0
-  resolvedDependencies:
-  - name: com.unity.nuget.mono-cecil
-    version: 1.10.1
-  - name: com.unity.transport
-    version: 1.4.1
-  - name: com.unity.collections
-    version: 1.2.4
-  - name: com.unity.burst
-    version: 1.8.11
-  - name: com.unity.mathematics
-    version: 1.2.6
-  - name: com.unity.test-framework
-    version: 1.1.33
-  - name: com.unity.ext.nunit
-    version: 1.0.6
-  - name: com.unity.modules.imgui
-    version: 1.0.0
-  - name: com.unity.modules.jsonserialize
-    version: 1.0.0
-  keywords: []
-  registry:
-    id: main
-    name: 
-    url: https://packages.unity.com
-    scopes: []
-    isDefault: 1
-    capabilities: 7
-    configSource: 0
-  hideInEditor: 1
-  isAssetStorePackage: 0
-  datePublishedTicks: 638364170340000000
-  documentationUrl: https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@1.7/manual/index.html
-  hasRepository: 1
-  repository:
-    type: git
-    url: https://github.com/Unity-Technologies/com.unity.netcode.gameobjects.git
-    revision: 5df824c7588b43c29238a927d14642d5f94129ff
-    path: 
-  unityLifecycle:
-    version: 1.7.1
-    nextVersion: 
 - packageId: com.unity.probuilder@5.2.2
   testable: 0
   isDirectDependency: 1
@@ -1108,6 +1229,8 @@ m_ResolvedPackages:
     - 5.2.0
     - 5.2.2
     - 6.0.1-pre.1
+    - 6.0.1-pre.2
+    - 6.0.1
     compatible:
     - 5.2.2
     verified: 5.2.2
@@ -1364,6 +1487,7 @@ m_ResolvedPackages:
     - 1.4.1
     - 1.4.2
     - 1.4.3
+    - 1.4.4
     - 2.0.1-exp.1
     - 2.0.1-exp.2
     - 2.0.1-pre.12
@@ -1383,6 +1507,7 @@ m_ResolvedPackages:
     - 1.4.1
     - 1.4.2
     - 1.4.3
+    - 1.4.4
     - 2.0.1-exp.1
     - 2.0.1-exp.2
     - 2.0.1-pre.12
@@ -1547,6 +1672,7 @@ m_ResolvedPackages:
     - 3.0.6
     - 3.0.7
     - 3.0.8
+    - 3.0.9
     - 3.2.0-pre.1
     - 3.2.0-pre.2
     - 3.2.0-pre.3
@@ -1555,12 +1681,15 @@ m_ResolvedPackages:
     - 3.2.0-pre.6
     - 3.2.0-pre.7
     - 3.2.0-pre.8
+    - 3.2.0-pre.9
+    - 3.2.0-pre.10
     - 4.0.0-pre.1
     - 4.0.0-pre.2
     compatible:
     - 3.0.6
     - 3.0.7
     - 3.0.8
+    - 3.0.9
     - 3.2.0-pre.1
     - 3.2.0-pre.2
     - 3.2.0-pre.3
@@ -1569,7 +1698,9 @@ m_ResolvedPackages:
     - 3.2.0-pre.6
     - 3.2.0-pre.7
     - 3.2.0-pre.8
-    verified: 3.0.8
+    - 3.2.0-pre.9
+    - 3.2.0-pre.10
+    verified: 3.0.9
   dependencies:
   - name: com.unity.ugui
     version: 1.0.0
@@ -1713,6 +1844,7 @@ m_ResolvedPackages:
     - 1.8.4
     - 1.8.5
     - 1.8.6
+    - 1.8.7
     compatible:
     - 1.6.5
     - 1.7.0-pre.1
@@ -1731,6 +1863,7 @@ m_ResolvedPackages:
     - 1.8.4
     - 1.8.5
     - 1.8.6
+    - 1.8.7
     verified: 1.6.5
   dependencies:
   - name: com.unity.modules.director
@@ -1803,6 +1936,7 @@ m_ResolvedPackages:
     - 1.0.0
     - 3.0.0-exp.1
     - 3.0.0-exp.3
+    - 3.0.0-exp.4
     compatible:
     - 1.0.0
     verified: 1.0.0
@@ -1892,9 +2026,13 @@ m_ResolvedPackages:
     - 1.8.0
     - 1.9.0
     - 1.9.1
+    - 1.9.2
+    - 1.9.4
     compatible:
     - 1.9.1
-    verified: 1.9.1
+    - 1.9.2
+    - 1.9.4
+    verified: 1.9.4
   dependencies:
   - name: com.unity.ugui
     version: 1.0.0
@@ -3987,10 +4125,18 @@ m_ResolvedPackages:
     - 1.8.10
     - 1.8.11
     - 1.8.12
+    - 1.8.13
+    - 1.8.14
+    - 1.8.15
+    - 1.8.16
     compatible:
     - 1.8.11
     - 1.8.12
-    verified: 1.8.12
+    - 1.8.13
+    - 1.8.14
+    - 1.8.15
+    - 1.8.16
+    verified: 1.8.16
   dependencies:
   - name: com.unity.mathematics
     version: 1.2.1
@@ -4805,6 +4951,10 @@ m_ResolvedPackages:
     - 2.3.0-pre.3
     - 2.4.0-exp.2
     - 2.4.0-pre.2
+    - 2.4.0-pre.5
+    - 2.4.0
+    - 2.4.1
+    - 2.4.2
     compatible:
     - 1.2.4
     - 1.3.1
@@ -4966,6 +5116,107 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 3.1.1
     nextVersion: 
+- packageId: com.unity.netcode.gameobjects@1.8.1
+  testable: 0
+  isDirectDependency: 1
+  version: 1.8.1
+  source: 1
+  resolvedPath: D:\github\NetcodeProject\StaySafe\Library\PackageCache\com.unity.netcode.gameobjects@1.8.1
+  assetPath: Packages/com.unity.netcode.gameobjects
+  name: com.unity.netcode.gameobjects
+  displayName: Netcode for GameObjects
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: assets
+  description: Netcode for GameObjects is a high-level netcode SDK that provides
+    networking capabilities to GameObject/MonoBehaviour workflows within Unity and
+    sits on top of underlying transport layer.
+  status: 0
+  errors: []
+  versions:
+    all:
+    - 1.0.0-pre.2
+    - 1.0.0-pre.3
+    - 1.0.0-pre.4
+    - 1.0.0-pre.5
+    - 1.0.0-pre.6
+    - 1.0.0-pre.7
+    - 1.0.0-pre.8
+    - 1.0.0-pre.9
+    - 1.0.0-pre.10
+    - 1.0.0
+    - 1.0.1
+    - 1.0.2
+    - 1.1.0
+    - 1.2.0
+    - 1.3.1
+    - 1.4.0
+    - 1.5.1
+    - 1.5.2
+    - 1.6.0
+    - 1.7.0
+    - 1.7.1
+    - 1.8.0
+    - 1.8.1
+    - 1.9.1
+    - 2.0.0-exp.2
+    - 2.0.0-exp.4
+    - 2.0.0-exp.5
+    compatible:
+    - 1.7.1
+    - 1.8.0
+    - 1.8.1
+    - 1.9.1
+    verified: 1.7.1
+  dependencies:
+  - name: com.unity.nuget.mono-cecil
+    version: 1.10.1
+  - name: com.unity.transport
+    version: 1.4.0
+  resolvedDependencies:
+  - name: com.unity.nuget.mono-cecil
+    version: 1.10.1
+  - name: com.unity.transport
+    version: 1.4.1
+  - name: com.unity.collections
+    version: 1.2.4
+  - name: com.unity.burst
+    version: 1.8.11
+  - name: com.unity.mathematics
+    version: 1.2.6
+  - name: com.unity.test-framework
+    version: 1.1.33
+  - name: com.unity.ext.nunit
+    version: 1.0.6
+  - name: com.unity.modules.imgui
+    version: 1.0.0
+  - name: com.unity.modules.jsonserialize
+    version: 1.0.0
+  keywords: []
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+  hideInEditor: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 638435038500000000
+  documentationUrl: https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@1.8/manual/index.html
+  hasRepository: 1
+  repository:
+    type: git
+    url: https://github.com/Unity-Technologies/com.unity.netcode.gameobjects.git
+    revision: eb213838233cbee2030891203bcb72d2354a5a7d
+    path: 
+  unityLifecycle:
+    version: 1.7.1
+    nextVersion: 
 - packageId: com.unity.services.relay@1.0.5
   testable: 0
   isDirectDependency: 0
@@ -5004,8 +5255,12 @@ m_ResolvedPackages:
     - 1.0.3
     - 1.0.4
     - 1.0.5
+    - 1.1.0
+    - 1.1.1
     compatible:
     - 1.0.5
+    - 1.1.0
+    - 1.1.1
     verified: 1.0.5
   dependencies:
   - name: com.unity.services.core
@@ -5138,9 +5393,13 @@ m_ResolvedPackages:
     - 1.2.3
     - 1.3.2
     - 1.4.0
+    - 1.4.1
+    - 1.4.2
     compatible:
     - 1.4.0
-    verified: 1.4.0
+    - 1.4.1
+    - 1.4.2
+    verified: 1.4.2
   dependencies: []
   resolvedDependencies: []
   keywords:
@@ -5167,145 +5426,6 @@ m_ResolvedPackages:
     path: 
   unityLifecycle:
     version: 1.4.0
-    nextVersion: 
-- packageId: com.unity.adaptiveperformance@4.0.1
-  testable: 0
-  isDirectDependency: 0
-  version: 4.0.1
-  source: 1
-  resolvedPath: D:\github\NetcodeProject\StaySafe\Library\PackageCache\com.unity.adaptiveperformance@4.0.1
-  assetPath: Packages/com.unity.adaptiveperformance
-  name: com.unity.adaptiveperformance
-  displayName: Adaptive Performance
-  author:
-    name: 
-    email: 
-    url: 
-  category: 
-  type: asset
-  description: 'The Adaptive Performance package provides an API to get feedback
-    about the thermal and power state of mobile devices, enabling applications to
-    make performance-relevant adaptions at runtime.
-
-
-    For instruction on how
-    to use samples, please read the documentation.
-
-
-    By installing this package,
-    you agree to the terms and conditions of the Unity End User License Agreement
-    found under "View licenses" above.'
-  status: 0
-  errors: []
-  versions:
-    all:
-    - 0.2.0-preview.1
-    - 1.0.0
-    - 1.0.1
-    - 1.1.0-preview.2
-    - 1.1.0-preview.3
-    - 1.1.0-preview.4
-    - 1.1.0-preview.5
-    - 1.1.0-preview.7
-    - 1.1.0
-    - 1.1.6
-    - 1.1.9
-    - 1.1.10
-    - 1.2.0
-    - 1.2.2
-    - 1.2.3
-    - 2.0.0-preview.1
-    - 2.0.0-preview.2
-    - 2.0.0-preview.4
-    - 2.0.0-preview.7
-    - 2.0.0-preview.8
-    - 2.0.0-preview.9
-    - 2.0.0-preview.10
-    - 2.0.0-preview.11
-    - 2.0.0
-    - 2.0.1
-    - 2.0.2
-    - 2.1.0
-    - 2.1.1
-    - 2.2.1
-    - 2.2.3
-    - 2.2.4
-    - 3.0.0-pre.2
-    - 3.0.0
-    - 3.0.2
-    - 3.0.3
-    - 4.0.0-pre.1
-    - 4.0.0
-    - 4.0.1
-    - 5.0.0-pre.1
-    - 5.0.0-pre.2
-    - 5.0.0-pre.3
-    - 5.0.0-pre.4
-    - 5.0.0
-    - 5.0.1
-    - 5.0.2
-    compatible:
-    - 4.0.1
-    - 5.0.0-pre.1
-    - 5.0.0-pre.2
-    - 5.0.0-pre.3
-    - 5.0.0-pre.4
-    - 5.0.0
-    - 5.0.1
-    - 5.0.2
-    verified: 4.0.1
-  dependencies:
-  - name: com.unity.subsystemregistration
-    version: 1.1.0
-  - name: com.unity.profiling.core
-    version: 1.0.2
-  resolvedDependencies:
-  - name: com.unity.subsystemregistration
-    version: 1.1.0
-  - name: com.unity.modules.subsystems
-    version: 1.0.0
-  - name: com.unity.modules.jsonserialize
-    version: 1.0.0
-  - name: com.unity.profiling.core
-    version: 1.0.2
-  keywords:
-  - mobile
-  - adaptive
-  - performance
-  - utility
-  - utilities
-  - core
-  - samsung
-  - ap
-  - provider
-  - subsystem
-  - indexer
-  - scaler
-  - vrr
-  - boost
-  - profiles
-  - cluster
-  - clusterinfo
-  registry:
-    id: main
-    name: 
-    url: https://packages.unity.com
-    scopes: []
-    isDefault: 1
-    capabilities: 7
-    configSource: 0
-  hideInEditor: 1
-  isAssetStorePackage: 0
-  datePublishedTicks: 637940147290000000
-  documentationUrl: 
-  hasRepository: 1
-  repository:
-    type: git
-    url: https://github.cds.internal.unity3d.com/unity/com.unity.adaptiveperformance.git
-    revision: 08f36a7c7e7e80b8ec602e108f0e40d1661540b5
-    path: 
-  unityLifecycle:
-    version: 4.0.1
     nextVersion: 
 - packageId: com.unity.mobile.notifications@2.3.0
   testable: 0
@@ -5375,10 +5495,12 @@ m_ResolvedPackages:
     - 2.2.2
     - 2.3.0
     - 2.3.1
+    - 2.3.2
     compatible:
     - 2.3.0
     - 2.3.1
-    verified: 2.3.1
+    - 2.3.2
+    verified: 2.3.2
   dependencies:
   - name: com.unity.modules.androidjni
     version: 1.0.0
@@ -5496,10 +5618,12 @@ m_ResolvedPackages:
     - 1.21.20
     - 1.21.21
     - 1.21.22
+    - 1.21.23
     - 2.0.1
     - 2.0.2
     - 2.1.0
     - 2.1.2
+    - 2.1.3
     compatible:
     - 1.20.1
     - 1.20.2
@@ -5514,10 +5638,12 @@ m_ResolvedPackages:
     - 1.21.20
     - 1.21.21
     - 1.21.22
+    - 1.21.23
     - 2.0.1
     - 2.0.2
     - 2.1.0
     - 2.1.2
+    - 2.1.3
     verified: 1.20.2
   dependencies: []
   resolvedDependencies: []
@@ -5548,6 +5674,72 @@ m_ResolvedPackages:
     path: 
   unityLifecycle:
     version: 1.20.1
+    nextVersion: 
+- packageId: com.unity.subsystemregistration@1.1.0
+  testable: 0
+  isDirectDependency: 0
+  version: 1.1.0
+  source: 1
+  resolvedPath: D:\github\NetcodeProject\StaySafe\Library\PackageCache\com.unity.subsystemregistration@1.1.0
+  assetPath: Packages/com.unity.subsystemregistration
+  name: com.unity.subsystemregistration
+  displayName: Subsystem Registration
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: asset
+  description: Provides internal registration mechanism for standalone subsystems. 
+    It allows a standalone subsystem to inform the Subsystem Manager of its existence.
+  status: 0
+  errors: []
+  versions:
+    all:
+    - 1.0.0-preview.4
+    - 1.0.4
+    - 1.0.5
+    - 1.0.6
+    - 1.1.0
+    - 1.1.1
+    - 1.1.2
+    compatible:
+    - 1.1.0
+    - 1.1.1
+    - 1.1.2
+    verified: 1.1.2
+  dependencies:
+  - name: com.unity.modules.subsystems
+    version: 1.0.0
+  resolvedDependencies:
+  - name: com.unity.modules.subsystems
+    version: 1.0.0
+  - name: com.unity.modules.jsonserialize
+    version: 1.0.0
+  keywords:
+  - subsystem
+  - registration
+  - internal
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+  hideInEditor: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 637314426150000000
+  documentationUrl: 
+  hasRepository: 1
+  repository:
+    type: git
+    url: https://github.cds.internal.unity3d.com/unity/com.unity.subsystemregistration.git
+    revision: 72584ba5248fbe79e560e795ad819f876954fceb
+    path: 
+  unityLifecycle:
+    version: 1.1.0
     nextVersion: 
 - packageId: com.unity.searcher@4.9.1
   testable: 0
@@ -5667,11 +5859,15 @@ m_ResolvedPackages:
     - 1.12.0
     - 1.12.1
     - 1.12.2
+    - 1.12.4
+    - 1.12.5
     compatible:
     - 1.12.0
     - 1.12.1
     - 1.12.2
-    verified: 1.12.2
+    - 1.12.4
+    - 1.12.5
+    verified: 1.12.5
   dependencies:
   - name: com.unity.modules.unitywebrequest
     version: 1.0.0
@@ -5749,17 +5945,21 @@ m_ResolvedPackages:
     - 2.6.1
     - 2.7.1
     - 2.7.2
+    - 2.7.4
     - 3.0.0
     - 3.1.0
     - 3.2.0
     - 3.3.0
+    - 3.3.1
     compatible:
     - 2.7.2
+    - 2.7.4
     - 3.0.0
     - 3.1.0
     - 3.2.0
     - 3.3.0
-    verified: 2.7.2
+    - 3.3.1
+    verified: 2.7.4
   dependencies:
   - name: com.unity.nuget.newtonsoft-json
     version: 3.2.1
@@ -5833,8 +6033,12 @@ m_ResolvedPackages:
     - 1.1.0
     - 1.2.0
     - 1.2.1
+    - 1.3.0
+    - 1.3.2
     compatible:
     - 1.2.1
+    - 1.3.0
+    - 1.3.2
     verified: 1.2.1
   dependencies:
   - name: com.unity.services.core
@@ -5956,70 +6160,4 @@ m_ResolvedPackages:
     path: 
   unityLifecycle:
     version: 1.0.0
-    nextVersion: 
-- packageId: com.unity.subsystemregistration@1.1.0
-  testable: 0
-  isDirectDependency: 0
-  version: 1.1.0
-  source: 1
-  resolvedPath: D:\github\NetcodeProject\StaySafe\Library\PackageCache\com.unity.subsystemregistration@1.1.0
-  assetPath: Packages/com.unity.subsystemregistration
-  name: com.unity.subsystemregistration
-  displayName: Subsystem Registration
-  author:
-    name: 
-    email: 
-    url: 
-  category: 
-  type: asset
-  description: Provides internal registration mechanism for standalone subsystems. 
-    It allows a standalone subsystem to inform the Subsystem Manager of its existence.
-  status: 0
-  errors: []
-  versions:
-    all:
-    - 1.0.0-preview.4
-    - 1.0.4
-    - 1.0.5
-    - 1.0.6
-    - 1.1.0
-    - 1.1.1
-    - 1.1.2
-    compatible:
-    - 1.1.0
-    - 1.1.1
-    - 1.1.2
-    verified: 1.1.2
-  dependencies:
-  - name: com.unity.modules.subsystems
-    version: 1.0.0
-  resolvedDependencies:
-  - name: com.unity.modules.subsystems
-    version: 1.0.0
-  - name: com.unity.modules.jsonserialize
-    version: 1.0.0
-  keywords:
-  - subsystem
-  - registration
-  - internal
-  registry:
-    id: main
-    name: 
-    url: https://packages.unity.com
-    scopes: []
-    isDefault: 1
-    capabilities: 7
-    configSource: 0
-  hideInEditor: 1
-  isAssetStorePackage: 0
-  datePublishedTicks: 637314426150000000
-  documentationUrl: 
-  hasRepository: 1
-  repository:
-    type: git
-    url: https://github.cds.internal.unity3d.com/unity/com.unity.subsystemregistration.git
-    revision: 72584ba5248fbe79e560e795ad819f876954fceb
-    path: 
-  unityLifecycle:
-    version: 1.1.0
     nextVersion: 

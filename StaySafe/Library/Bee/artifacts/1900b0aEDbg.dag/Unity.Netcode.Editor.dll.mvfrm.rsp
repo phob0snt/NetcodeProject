@@ -1,5 +1,9 @@
 Library\Bee\artifacts\mvdfrm\Unity.Netcode.Components.ref.dll_F064B6B8E3F295A1.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.Netcode.Runtime.ref.dll_DC88FEFD89E76D63.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.Networking.Transport.ref.dll_47A2205D803C4396.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.Services.Authentication.ref.dll_1F42B0673A5F8747.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.Services.Core.ref.dll_20594DC17355841E.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.Services.Relay.ref.dll_C78B7364829379F8.mvfrm
 Library\Bee\artifacts\mvdfrm\UnityEditor.TestRunner.ref.dll_3CEDFFDC50464BDC.mvfrm
 Library\Bee\artifacts\mvdfrm\UnityEditor.UI.ref.dll_5DAE2CC8CF4B8C9E.mvfrm
 Library\Bee\artifacts\mvdfrm\UnityEngine.TestRunner.ref.dll_090C4A8A7C09A9C7.mvfrm

@@ -292,7 +292,7 @@
 -r:"C:/Program Files/unity/2021.3.34f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/mono/Managed/UnityEngine.VRModule.dll"
 -r:"C:/Program Files/unity/2021.3.34f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/mono/Managed/UnityEngine.WindModule.dll"
 -r:"C:/Program Files/unity/2021.3.34f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/mono/Managed/UnityEngine.XRModule.dll"
--r:"D:/unityProjs/StaySafe/Library/PackageCache/com.unity.burst@1.8.11/Unity.Burst.Unsafe.dll"
+-r:"D:/github/NetcodeProject/StaySafe/Library/PackageCache/com.unity.burst@1.8.11/Unity.Burst.Unsafe.dll"
 -r:"Library/Bee/artifacts/1900b0aP.dag/UnityEngine.UI.ref.dll"
 "Library/PackageCache/com.unity.burst@1.8.11/Runtime/BurstCompileAttribute.cs"
 "Library/PackageCache/com.unity.burst@1.8.11/Runtime/BurstCompiler.cs"

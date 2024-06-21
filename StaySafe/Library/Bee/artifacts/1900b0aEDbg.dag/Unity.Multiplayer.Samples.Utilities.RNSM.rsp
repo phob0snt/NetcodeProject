@@ -333,8 +333,8 @@
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.Multiplayer.Tools.NetStatsMonitor.Component.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/UnityEngine.UI.ref.dll"
-"Library/PackageCache/com.unity.multiplayer.samples.coop@e48babbbf2/Utilities/Net/RNSM/AutoHide.cs"
-"Library/PackageCache/com.unity.multiplayer.samples.coop@e48babbbf2/Utilities/Net/RNSM/NetStatsMonitorCustomization.cs"
+"Library/PackageCache/com.unity.multiplayer.samples.coop@74afaebf85/Utilities/Net/RNSM/AutoHide.cs"
+"Library/PackageCache/com.unity.multiplayer.samples.coop@74afaebf85/Utilities/Net/RNSM/NetStatsMonitorCustomization.cs"
 -langversion:9.0
 
 /deterministic
